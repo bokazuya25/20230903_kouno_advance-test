@@ -1,0 +1,125 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form__wrap {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 740px;
+}
+
+.form__title {
+    text-align: center;
+}
+
+.form__item {
+    padding: 10px ;
+    display: flex;
+}
+
+.form__item-box-post {
+    display: flex;
+}
+
+.form__item-postmark {
+    display: inline-block;
+    font-size: 18px;
+    padding: 0 1em 0 0.2em;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.form__item-label {
+    width: 30%;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.form__item-box {
+    width: 100%;
+}
+
+.form__item-radio-box {
+    margin:18px 0;
+}
+
+.form__item-input-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__item-input-box__area {
+    width: 49%;
+}
+
+.form__item-text {
+    padding-left: 1em;
+    margin: 5px 0 0 0;
+    color: gray;
+}
+
+.form__item-input {
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 40px;
+    flex: 1;
+    width: 100%;
+    font-size: 18px;
+}
+
+.form__item-input-name {
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.form__item-radio-box {
+    padding-left: 1em;
+    margin: 8px 0 0 0;
+}
+
+.form__item-radio-input {
+    transform: scale(3.0);
+}
+
+.form__item-radio-label {
+    font-size: 18px;
+    padding-left: 1.5em;
+    padding-right: 3em;
+}
+
+.form__item-text--space-left {
+    padding-left: 3.5em;
+    margin: 5px 0 0 0;
+    color: gray;
+}
+
+.form__item-textarea {
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    height: 130px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.form__button {
+    padding: 0 10px;
+    width: 170px;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    margin: 10px auto;
+}
