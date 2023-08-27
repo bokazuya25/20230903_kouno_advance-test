@@ -1,0 +1,29 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.thanks__wrap {
+    margin-top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 740px;
+}
+
+.thanks__text {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom:5%;
+}
+
+.thanks__button {
+    padding: 0 10px;
+    width: 170px;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    margin: 10px auto;
+}
