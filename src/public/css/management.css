@@ -1,0 +1,167 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid red;
+}
+
+.form__title {
+    text-align: center;
+}
+
+.form__wrap{
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.form__group{
+    display: flex;
+}
+
+.form__item {
+    padding: 10px;
+    display: flex;
+}
+
+.form__item-label {
+    width: 150px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.form__item-label--small-width {
+    width: 90px;
+    padding-left: 15px;
+}
+
+.form__item-radio-box {
+    margin: 18px 0;
+    padding-left: 1em;
+    margin: 8px 0 0 0;
+}
+
+.form__item-radio-input {
+    transform: scale(3.0);
+}
+
+.form__item-radio-label {
+    font-size: 16px;
+    padding-left: 1.5em;
+    padding-right: 4em;
+}
+
+.form__item-input {
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 40px;
+    flex: 1;
+    width: 300px;
+    font-size: 16px;
+}
+
+.form__item-input-box {
+    display: flex;
+}
+
+.form__item--delimiter {
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 50%;
+}
+
+.form__item-email {
+    width: 470px;
+}
+
+.form__button {
+    padding: 0 10px;
+    width: 170px;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    margin: 10px auto;
+}
+
+.form__button--reset {
+    border: none;
+    background: none;
+    display: block;
+    margin: 10px auto;
+    text-decoration: underline;
+}
+
+.table__wrap {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+    width: 100%;
+}
+
+th,td {
+    height: 40px;
+    text-align: left;
+    padding-left: 2%;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+
+.table__header-id {
+    width: 5%;
+}
+
+.table__header-fullname,
+.table__item-fullname {
+    width: 13%;
+}
+
+.table__header-gender,
+.table__item-gender {
+    width: 8%;
+}
+
+.table__header-emali,
+.table__item-email {
+    width: 20%;
+}
+
+.table__header-opinion,
+.table__item-opinion {
+}
+
+.table__item-opinion-text {
+    margin: 0;
+    width: 48ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table__header-delete,
+.table__item-delete {
+    width: 10%;
+    padding: 0;
+}
+
+.table__item-delete-button {
+    padding: 0 18px;
+    border: none;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+}

@@ -47,4 +47,10 @@ class ContactController extends Controller
         Contact::create($contact);
         return view('thanks');
     }
+
+    public function management()
+    {
+        $contacts = Contact::all();
+        return view('management', compact('contacts'));
+    }
 }

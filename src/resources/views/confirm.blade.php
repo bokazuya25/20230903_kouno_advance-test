@@ -19,7 +19,7 @@
                 <p class="form__item-label">お名前</p>
                 <div class="form__item-box">
                     <p class="form__item-input">{{ $contact['lastname'] . '　' . $contact['firstname'] }}</p>
-                    <input type="hidden" name="fullname" value="{{ $contact['lastname'] . '　' . $contact['firstname'] }}">
+                    <input type="hidden" name="fullname" value="{{ $contact['lastname'] . $contact['firstname'] }}">
                 </div>
             </div>
             <div class="form__item">

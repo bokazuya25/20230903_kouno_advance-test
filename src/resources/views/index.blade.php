@@ -40,9 +40,9 @@
                 <p class="form__item-label">性別※</p>
                 <div class="form__item-box">
                     <div class="form__item-radio-box">
-                        <input class="form__item-radio-input" type="radio" name="gender" value="1" {{ old('gender') == 1 ? 'checked' : '' }}
-                            checked><label class="form__item-radio-label" for="">男性</label>
-                        <input class="form__item-radio-input" type="radio" name="gender" value="2" {{ old('gender') == 2 ? 'checked' : '' }}><label class="form__item-radio-label" for="">女性</label>
+                        <input class="form__item-radio-input" id="man" type="radio" name="gender" value="1" {{ old('gender') == 1 ? 'checked' : '' }}
+                            checked><label class="form__item-radio-label" for="man">男性</label>
+                        <input class="form__item-radio-input" id="woman" type="radio" name="gender" value="2" {{ old('gender') == 2 ? 'checked' : '' }}><label class="form__item-radio-label" for="woman">女性</label>
                         @error('gender')
                             <p class="form__item-text error">{{ $message }}</p>
                         @enderror
