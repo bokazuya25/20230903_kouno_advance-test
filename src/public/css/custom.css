@@ -1,0 +1,31 @@
+
+.pagination__wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination__text {
+    display: inline-block;
+}
+
+.pagination__nav {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid gray;
+    padding: 3px 6px;
+}
+
+a.active {
+    color: white;
+    background-color: black;
+}

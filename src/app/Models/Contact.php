@@ -18,4 +18,6 @@ class Contact extends Model
         'building_name',
         'opinion'
     ];
+
 }
+

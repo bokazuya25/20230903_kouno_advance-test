@@ -11,38 +11,47 @@
 <body>
     <main>
         <h2 class="form__title">管理システム</h2>
-        <form class="form__wrap" action="">
+        <form class="form__wrap" action="search">
             @csrf
             <div class="form__group">
                 <div class="form__item">
-                    <p class="form__item-label">お名前</p>
+                    <div class="form__item-title">
+                        <p class="form__item-label">お名前</p>
+                    </div>
                     <input class="form__item-input" type="text">
                 </div>
                 <div class="form__item">
                     <p class="form__item-label form__item-label--small-width">性別</p>
                     <div class="form__item-radio-box">
-                        <input class="form__item-radio-input" type="radio"><label class="form__item-radio-label" for="">全て</label>
-                        <input class="form__item-radio-input" type="radio"><label class="form__item-radio-label" for="">男性</label>
-                        <input class="form__item-radio-input" type="radio"><label class="form__item-radio-label" for="">女性</label>
+                        <label class="form__item-radio"><input class="form__item-radio-input" type="radio" name="gender" checked><span class="form__item-radio-dummy"></span><span class="form__item-radio-text">全て</span></label>
+                        <label class="form__item-radio"><input class="form__item-radio-input" type="radio" name="gender"><span class="form__item-radio-dummy"></span><span class="form__item-radio-text">男性</span></label>
+                        <label class="form__item-radio"><input class="form__item-radio-input" type="radio" name="gender"><span class="form__item-radio-dummy"></span><span class="form__item-radio-text">女性</span></label>
                     </div>
                 </div>
             </div>
             <div class="form__item">
-                <p class="form__item-label">登録日</p>
+                <div class="form__item-title">
+                    <p class="form__item-label">登録日</p>
+                </div>
                 <div class="form__item-input-box">
                     <input class="form__item-input" type="text">
                     <p class="form__item--delimiter">~</p>
                     <input class="form__item-input" type="text">
                 </div>
             </div>
-            <div class="form__item form__item-email">
-                <p class="form__item-label">メールアドレス</p>
-                <input class="form__item-input" type="email">
+            <div class="form__item">
+                <div class="form__item-title">
+                    <p class="form__item-label">メールアドレス</p>
+                </div>
+                <div class="form__item-email">
+                    <input class="form__item-input" type="email">
+                </div>
             </div>
             <button class="form__button">検索</button>
-            <button class="form__button--reset">リセット</button>
+            <input class="form__button-reset" type="reset" name="reset" value="リセット">
         </form>
 
+        {{ $contacts->links('vendor.pagination.custom') }}
 
         <table class="table__wrap">
             <tr class="table__header-row">
@@ -68,7 +77,14 @@
                 <td class="table__item-opinion">
                     <p class="table__item-opinion-text">{{ $contact->opinion }}</p>
                 </td>
-                <td class="table__item-delete"><button class="table__item-delete-button">削除</button></td>
+                <td class="table__item-delete">
+                    <form class="delete-form" action="{{ route('destroy') }}" method="post">
+                        @method('delete')
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $contact['id'] }}">
+                        <button class="table__item-delete-button" type="submit">削除</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </table>

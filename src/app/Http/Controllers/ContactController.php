@@ -50,7 +50,12 @@ class ContactController extends Controller
 
     public function management()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::paginate(10);
         return view('management', compact('contacts'));
+    }
+
+    public function destroy(Request $request) {
+        Contact::find($request->id)->delete();
+        return redirect('management');
     }
 }
