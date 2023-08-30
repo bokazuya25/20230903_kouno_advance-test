@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Contact as ModelsContact;
+use Carbon\Carbon;
 
 class ContactController extends Controller
 {
@@ -48,14 +49,30 @@ class ContactController extends Controller
         return view('thanks');
     }
 
-    public function management()
+    public function management(Request $request)
     {
         $contacts = Contact::paginate(10);
         return view('management', compact('contacts'));
     }
 
-    public function destroy(Request $request) {
+    public function destroy(Request $request)
+    {
         Contact::find($request->id)->delete();
         return redirect('management');
+    }
+
+    public function search(Request $request)
+    {
+        $searchParams = $request->all();
+        $contacts = Contact::search($searchParams)
+            ->when(!empty($searchParams['start_date'])&&!empty($searchParams['end_date']),function($query)use($searchParams){
+                $query->whereBetween('created_at',[
+                    Carbon::parse($searchParams['start_date'])->startOfDay(),
+                    Carbon::parse($searchParams['end_date'])->endOfDay(),
+                ]);
+            })
+            ->paginate(10);
+            
+        return view('management', compact('contacts', 'searchParams'));
     }
 }

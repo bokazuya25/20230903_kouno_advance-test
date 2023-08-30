@@ -1,3 +1,7 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 main {
     width: 90%;
     margin: 0 auto;
@@ -131,7 +135,7 @@ main {
     width: 250px;
 }
 
-.form__button {
+.form__button-search {
     padding: 0 10px;
     width: 150px;
     height: 40px;
@@ -156,11 +160,12 @@ main {
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
     width: 100%;
 }
 
 th,td {
-    height: 50px;
+    height: 60px;
     text-align: left;
     padding-left: 2%;
 }
@@ -194,6 +199,14 @@ th {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.table__item-opinion-text:hover {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .table__header-delete,

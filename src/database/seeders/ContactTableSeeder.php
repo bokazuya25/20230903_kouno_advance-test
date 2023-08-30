@@ -3,16 +3,17 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Contact;
 
-class DatabaseSeeder extends Seeder
+class ContactTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([ContactTableSeeder::class]);
+        Contact::factory()->count(35)->create();
     }
 }

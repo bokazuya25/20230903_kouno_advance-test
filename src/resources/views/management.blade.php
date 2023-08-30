@@ -11,21 +11,21 @@
 <body>
     <main>
         <h2 class="form__title">管理システム</h2>
-        <form class="form__wrap" action="search">
+        <form class="form__wrap" action="{{ route('search') }}" method="get">
             @csrf
             <div class="form__group">
                 <div class="form__item">
                     <div class="form__item-title">
                         <p class="form__item-label">お名前</p>
                     </div>
-                    <input class="form__item-input" type="text">
+                    <input class="form__item-input" type="text" name="fullname" value="{{ $searchParams['fullname'] ?? '' }}">
                 </div>
                 <div class="form__item">
                     <p class="form__item-label form__item-label--small-width">性別</p>
                     <div class="form__item-radio-box">
-                        <label class="form__item-radio"><input class="form__item-radio-input" type="radio" name="gender" checked><span class="form__item-radio-dummy"></span><span class="form__item-radio-text">全て</span></label>
-                        <label class="form__item-radio"><input class="form__item-radio-input" type="radio" name="gender"><span class="form__item-radio-dummy"></span><span class="form__item-radio-text">男性</span></label>
-                        <label class="form__item-radio"><input class="form__item-radio-input" type="radio" name="gender"><span class="form__item-radio-dummy"></span><span class="form__item-radio-text">女性</span></label>
+                        <label class="form__item-radio"><input class="form__item-radio-input" type="radio" name="gender" value="0" checked><span class="form__item-radio-dummy"></span><span class="form__item-radio-text">全て</span></label>
+                        <label class="form__item-radio"><input class="form__item-radio-input" type="radio" name="gender" value="1"><span class="form__item-radio-dummy"></span><span class="form__item-radio-text">男性</span></label>
+                        <label class="form__item-radio"><input class="form__item-radio-input" type="radio" name="gender" value="2"><span class="form__item-radio-dummy"></span><span class="form__item-radio-text">女性</span></label>
                     </div>
                 </div>
             </div>
@@ -34,9 +34,9 @@
                     <p class="form__item-label">登録日</p>
                 </div>
                 <div class="form__item-input-box">
-                    <input class="form__item-input" type="text">
+                    <input class="form__item-input" type="date" name="start_date" value="{{ $searchParams['start_date'] ?? '' }}">
                     <p class="form__item--delimiter">~</p>
-                    <input class="form__item-input" type="text">
+                    <input class="form__item-input" type="date" name="end_date" value="{{ $searchParams['end_date'] ?? '' }}">
                 </div>
             </div>
             <div class="form__item">
@@ -47,8 +47,8 @@
                     <input class="form__item-input" type="email">
                 </div>
             </div>
-            <button class="form__button">検索</button>
-            <input class="form__button-reset" type="reset" name="reset" value="リセット">
+            <button class="form__button-search">検索</button>
+            <button class="form__button-reset" onclick="location.href='/management'" type="reset" name="reset">リセット</button>
         </form>
 
         {{ $contacts->links('vendor.pagination.custom') }}
