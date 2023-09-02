@@ -193,6 +193,20 @@ th {
     width: 20%;
 }
 
+.table__item-email {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table__item-email:hover {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .table__item-opinion-text {
     margin: 0;
     width: 48ch;

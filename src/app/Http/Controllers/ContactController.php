@@ -36,8 +36,11 @@ class ContactController extends Controller
             return redirect('/')->withInput();
         }
 
+        $lastname = $request->input('lastname');
+        $firstname = $request->input('firstname');
+        $fullname = $lastname . $firstname;
+
         $contact = $request->only([
-            'fullname',
             'gender',
             'email',
             'postcode',
@@ -45,6 +48,8 @@ class ContactController extends Controller
             'building_name',
             'opinion'
         ]);
+        $contact['fullname'] = $fullname;
+
         Contact::create($contact);
         return view('thanks');
     }
@@ -72,7 +77,7 @@ class ContactController extends Controller
                 ]);
             })
             ->paginate(10);
-            
+
         return view('management', compact('contacts', 'searchParams'));
     }
 }
