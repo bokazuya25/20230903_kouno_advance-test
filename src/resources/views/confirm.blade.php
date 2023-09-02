@@ -72,7 +72,7 @@
                 </div>
             </div>
             <button class="form__button" type="submit">送信</button>
-            <button class="form__button--modify" type="submit" name="back" value="back" onclick="location.href='{{ route('index',['populate'=>1]) }}'">修正する</button>
+            <button class="form__button--modify" type="submit" name="back" value="back" onclick="location.href='{{ route('store') }}'">修正する</button>
         </form>
     </main>
 </body>
